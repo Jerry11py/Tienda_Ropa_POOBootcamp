@@ -1,21 +1,24 @@
-# carrito.py
-
 class Carrito:
     def __init__(self):
-        self._productos = []  # Lista para almacenar los productos del carrito
+        self._productos = {}  # Diccionario para almacenar productos y sus cantidades
 
-    def agregar_producto(self, producto):
-        self._productos.append(producto)  # Agrega un producto al carrito
+    def agregar_producto(self, producto, cantidad):
+        if producto.hay_stock(cantidad):
+            if producto in self._productos:
+                self._productos[producto] += cantidad
+            else:
+                self._productos[producto] = cantidad
+            producto.reducir_stock(cantidad)
+        else:
+            print(f"No hay suficiente stock para {producto.mostrar_info()}.")
 
     def calcular_total(self):
-        # Calcula el total de los productos en el carrito
-        total = sum(producto.obtener_precio() for producto in self._productos)
+        total = sum(producto.obtener_precio() * cantidad for producto, cantidad in self._productos.items())
         return total
 
     def mostrar_resumen(self):
-        # Muestra un resumen de los productos en el carrito y el total
         resumen = "Resumen de compra:\n"
-        for producto in self._productos:
-            resumen += f"- {producto.mostrar_info()}\n"
-        resumen += f"Total a pagar: ${int(self.calcular_total())}"  # Muestra el total sin decimales
+        for producto, cantidad in self._productos.items():
+            resumen += f"- {producto.mostrar_info()} || Cantidad: {cantidad}\n"
+        resumen += f"Total a pagar: ${self.calcular_total()}"
         return resumen

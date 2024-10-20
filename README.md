@@ -1,71 +1,64 @@
-# Sistema de Compra de Ropa con Stock y Carrito de Compras
 
-Este proyecto es un sistema de compra de ropa basado en consola, que permite a los usuarios seleccionar productos, agregarlos a un carrito, gestionar el stock y mostrar un resumen de la compra. El sistema está diseñado utilizando Programación Orientada a Objetos (POO) en Python.
+# Sistema de Gestión de Productos de Ropa
 
----
+Este proyecto es una simulación de una tienda de ropa, donde puedes seleccionar productos como camisas, pantalones, y zapatos, agregarlos a un carrito y obtener un resumen con el total a pagar.
 
-## Estructura del Proyecto
+## Descripción
 
-El proyecto está organizado en las siguientes clases:
+El sistema está construido utilizando clases y conceptos de Programación Orientada a Objetos (POO) en Python. Permite crear diferentes tipos de productos de ropa con sus respectivas características, gestionar el stock y realizar compras.
 
-### 1. **Producto (producto.py)**
+## Archivos Principales
 
-Clase base que define los atributos básicos y métodos comunes para todos los productos.
+- **producto.py**: Define las clases base para los productos y sus atributos.
+- **carrito.py**: Contiene la lógica para gestionar el carrito de compras.
+- **tienda.py**: Simula el flujo de una tienda física, permitiendo al usuario seleccionar productos y procesar la compra.
+- **main.py**: Este archivo es el punto de entrada principal del programa. Ejecuta la tienda y permite interactuar con el sistema de selección de productos.
 
-- **Atributos:**
-  - `nombre`: Nombre del producto.
-  - `precio`: Precio del producto.
-  - `stock`: Cantidad disponible en inventario.
+## Requisitos
 
-- **Métodos:**
-  - `obtener_precio()`: Retorna el precio del producto.
-  - `mostrar_info()`: Muestra la información del producto (nombre, precio, stock).
-  - `hay_stock(cantidad)`: Verifica si hay suficiente stock.
-  - `reducir_stock(cantidad)`: Reduce el stock cuando se realiza una compra.
+- **Python 3.x** debe estar instalado en tu sistema.
 
-### 2. **Ropa (producto.py)**
+## Instalación en Visual Studio
 
-Clase derivada de `Producto`, específica para productos de ropa, con atributos adicionales como la `talla` y el `tipo de tela`.
-
-### 3. **Camisa, Pantalon, Zapato (producto.py)**
-
-Clases derivadas de `Ropa`, que añaden características adicionales:
-
-- **Camisa**: Atributo adicional `tipo_cuello`.
-- **Pantalon**: Atributo adicional `largo`.
-- **Zapato**: Atributo adicional `tipo_material`.
-
-### 4. **Carrito (carrito.py)**
-
-Clase encargada de gestionar los productos seleccionados por el usuario.
-
-- **Atributos:**
-  - `productos`: Diccionario que almacena los productos seleccionados y sus cantidades.
-
-- **Métodos:**
-  - `agregar_producto(producto, cantidad)`: Añade productos al carrito, verificando stock.
-  - `calcular_total()`: Calcula el total de la compra.
-  - `mostrar_resumen()`: Muestra el resumen de la compra (productos, cantidad, precio total).
-
-### 5. **Tienda (tienda.py)**
-
-Clase que representa la tienda, mostrando los productos disponibles y gestionando la selección.
-
-- **Atributos:**
-  - `productos_disponibles`: Lista de productos que están a la venta en la tienda.
-
-- **Métodos:**
-  - `mostrar_productos()`: Muestra el catálogo de productos.
-  - `seleccionar_productos()`: Permite al usuario seleccionar productos y agregarlos al carrito.
-
----
+1. Abre Visual Studio.
+2. Crea un nuevo proyecto de tipo **Python Application**.
+3. Añade los archivos `producto.py`, `carrito.py`, `tienda.py`, y `main.py` a la carpeta del proyecto.
+4. Asegúrate de que `main.py` sea el archivo principal ejecutable del proyecto.
 
 ## Ejecución del Proyecto
 
-1. Clonar el repositorio en el entorno local.
-2. Verificar que se tiene instalada la última versión disponible de Python.
-3. Abrir una terminal o símbolo del sistema y navegar hasta el directorio donde se clonó el repositorio.
-4. Ejecutar el archivo main.py para iniciar el programa.
+1. Abre el archivo `main.py` en Visual Studio.
+2. Presiona **F5** para ejecutar el programa.
+3. Sigue las instrucciones en la terminal para seleccionar productos y finalizar la compra.
+
+### Alternativa: Ejecución desde la terminal
+
+1. Abre una terminal en la carpeta del proyecto.
+2. Ejecuta el siguiente comando:
 
 ```bash
-python tienda.py
+python main.py
+```
+
+## Uso
+
+1. **Visualización de productos**: Al ejecutar el programa, se te mostrarán los productos disponibles en la tienda.
+2. **Selección de productos**: Ingresa el número del producto que deseas agregar al carrito.
+3. **Cantidad**: Se te pedirá que indiques la cantidad de productos a agregar.
+4. **Finalizar compra**: Ingresa 'q' para terminar la selección y recibir el resumen de la compra con el total a pagar.
+
+## Ejemplo de ejecución
+
+```bash
+1. Producto: Camisa de Algodón || Precio: $20 || Stock: 10 || Talla: M || Tipo de Tela: Algodón || Tipo de Cuello: Clásico
+2. Producto: Pantalón de Mezclilla || Precio: $30 || Stock: 5 || Talla: L || Tipo de Tela: Denim || Largo: Corto
+3. Producto: Zapato de Cuero || Precio: $50 || Stock: 7 || Talla: 42 || Tipo de Tela: Cuero
+
+Seleccione el número del producto a agregar al carrito (o 'q' para finalizar): 1
+¿Cuántas unidades de Camisa de Algodón desea agregar? 2
+Producto agregado al carrito: Camisa de Algodón x 2.
+
+Total a pagar: $40
+```
+
+---

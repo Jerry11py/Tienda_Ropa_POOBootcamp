@@ -1,15 +1,12 @@
-markdown
-Copiar código
+
 # Sistema de Gestión de Tienda de Ropa
 
 Este es un proyecto simple que simula un sistema de gestión de una tienda de ropa, permitiendo a los usuarios seleccionar productos, agregar al carrito y ver un resumen de su compra.
 
 ## Estructura del Proyecto
 
-/tu_proyecto/ ├── producto.py ├── carrito.py ├── tienda.py └── main.py
+/Tienda_Ropa_POOBootcamp/ ├── producto.py ├── carrito.py ├── tienda.py └── main.py
 
-markdown
-Copiar código
 
 - **producto.py**: Contiene las clases para los productos y sus subtipos (Camisa, Pantalón, Zapato).
 - **carrito.py**: Contiene la clase `Carrito`, que maneja la lógica para agregar productos y calcular totales.
@@ -30,4 +27,3 @@ Copiar código
 
    ```bash
    python main.py
-Sigue las instrucciones en pantalla para seleccionar productos y agregar al carrito.
